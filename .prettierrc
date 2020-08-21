@@ -1,0 +1,13 @@
+{
+    "arrowParens": "avoid",
+    "semi": false,
+    "endOfLine": "lf",
+    "singleQuote": false,
+    "tabWidth": 4,
+    "trailingComma": "es5",
+    "bracketSpacing": true,
+    "jsxBracketSameLine": true,
+    "printWidth": 80,
+    "useTabs": false,
+    "react/jsx-max-props-per-line": [1, { "when": "always" }]
+}

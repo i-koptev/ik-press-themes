@@ -1,0 +1,22 @@
+{
+  "name": "@i-koptev/ik-press-themes",
+  "version": "1.0.0",
+  "description": "Exploring themes in Gatsby",
+  "main": "index.js",
+  "author": "Igor Koptev",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "sites/*",
+    "themes/*"
+  ],
+  "scripts": {
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "themes:ikpress": "yarn workspace @i-koptev/gatsby-theme-ik-press",
+    "themes:ikmui": "yarn workspace @i-koptev/gatsby-theme-material-ui",
+    "sites:ik-press": "yarn workspace @i-koptev/site-ik-press"
+  },
+  "devDependencies": {
+    "prettier": "^2.0.5"
+  }
+}

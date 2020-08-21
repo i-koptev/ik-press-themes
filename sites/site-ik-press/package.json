@@ -1,0 +1,20 @@
+{
+    "name": "@i-koptev/site-ik-press",
+    "private": true,
+    "version": "1.0.0",
+    "license": "MIT",
+    "scripts": {
+        "develop": "gatsby develop",
+        "build": "gatsby build",
+        "serve": "gatsby clean && gatsby build && gatsby serve",
+        "clean": "gatsby clean",
+        "cdev": "gatsby clean && gatsby develop"
+    },
+    "dependencies": {
+        "dotenv": "^8.2.0",
+        "gatsby": "^2.24.47",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
+        "@i-koptev/gatsby-theme-ik-press": "1.0.0"
+    }
+}
