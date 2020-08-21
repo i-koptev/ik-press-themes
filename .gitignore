@@ -53,8 +53,7 @@ typings/
 *.tgz
 
 # dotenv environment variables file
-.env
-.env.*
+.env*
 
 # gatsby files
 .cache/
@@ -83,3 +82,6 @@ package-lock.json
 
 # Other
 *__clone*
+
+#gatsby-plugin-wordpress cache
+.wordpress-cache
