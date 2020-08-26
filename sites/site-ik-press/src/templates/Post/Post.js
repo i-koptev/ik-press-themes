@@ -7,8 +7,7 @@ import Container from "@material-ui/core/Container"
 import Typography from "@material-ui/core/Typography"
 import Button from "@material-ui/core/Button"
 
-import Layout from "../../components/Layout"
-import LangSwitcher from "../../components/LangSwitcher"
+import MainLayout from "../../layouts/Main"
 import Menu from "../../components/Menu"
 
 const useStyles = makeStyles(theme => ({
@@ -67,9 +66,8 @@ const Post = ({ pageContext, data, location }) => {
     const theme = useTheme()
 
     return (
-        <Layout>
+        <MainLayout lang={pageContext.lang}>
             <Container maxWidth={theme.siteContainer.maxWidth}>
-                <LangSwitcher />
                 <Typography
                     className={classes.header}
                     variant="h3"
@@ -77,17 +75,7 @@ const Post = ({ pageContext, data, location }) => {
                     align="center">
                     {data.thisPost.title}
                 </Typography>
-                <Menu lang={pageContext.lang} />
-                <br />
-                <br />
-                <Link to="/a" className={classes.buttonLink}>
-                    <Button
-                        variant="contained"
-                        color="primary"
-                        className={classes.linkButton}>
-                        TEST
-                    </Button>
-                </Link>
+
                 <div
                     style={{
                         fontSize: "14px",
@@ -114,8 +102,10 @@ const Post = ({ pageContext, data, location }) => {
                         {JSON.stringify(data, null, 2)}
                     </pre>
                 </div>
+
+                <Menu lang={pageContext.lang} />
             </Container>
-        </Layout>
+        </MainLayout>
     )
 }
 

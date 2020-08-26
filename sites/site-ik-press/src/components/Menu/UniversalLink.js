@@ -1,5 +1,6 @@
 import React from "react"
-import { Link as GatsbyLink } from "gatsby"
+// import { Link as GatsbyLink } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 // Since DOM elements <a> cannot receive activeClassName
 // and partiallyActive, destructure the prop here and
 // pass it only to GatsbyLink
@@ -17,14 +18,17 @@ const UniversalLink = ({
     // Use Gatsby Link for internal links, and <a> for others
     if (internal) {
         return (
-            <GatsbyLink
+            // <GatsbyLink
+            <AniLink
+                fade
+                duration={0.5}
                 to={to}
                 activeClassName={activeClassName}
                 partiallyActive={partiallyActive}
-                {...other}
-            >
+                {...other}>
                 {children}
-            </GatsbyLink>
+            </AniLink>
+            // </GatsbyLink>
         )
     }
     return (

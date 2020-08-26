@@ -7,8 +7,7 @@ import Container from "@material-ui/core/Container"
 import Typography from "@material-ui/core/Typography"
 import Button from "@material-ui/core/Button"
 
-import Layout from "../../components/Layout"
-import LangSwitcher from "../../components/LangSwitcher"
+import MainLayout from "../../layouts/Main"
 
 const useStyles = makeStyles(theme => ({
     header: {
@@ -47,15 +46,13 @@ const Page = ({ pageContext, data }) => {
     const theme = useTheme()
 
     return (
-        <Layout>
+        <MainLayout lang={pageContext.lang}>
             <Container maxWidth={theme.siteContainer.maxWidth}>
-                <LangSwitcher />
                 <Typography
                     className={classes.header}
                     variant="h3"
                     component="h1"
-                    align="center"
-                >
+                    align="center">
                     {data.wpPage.title}
                 </Typography>
                 <div
@@ -64,8 +61,7 @@ const Page = ({ pageContext, data }) => {
                         backgroundColor: "#345",
                         color: "#eee",
                         padding: "1rem",
-                    }}
-                >
+                    }}>
                     <pre>
                         <b>Template:</b> {__filename}
                     </pre>
@@ -84,15 +80,13 @@ const Page = ({ pageContext, data }) => {
                 <div
                     dangerouslySetInnerHTML={{
                         __html: data.wpPage.title,
-                    }}
-                ></div>
+                    }}></div>
                 <div
                     dangerouslySetInnerHTML={{
                         __html: data.wpPage.content,
-                    }}
-                ></div>
+                    }}></div>
             </Container>
-        </Layout>
+        </MainLayout>
     )
 }
 

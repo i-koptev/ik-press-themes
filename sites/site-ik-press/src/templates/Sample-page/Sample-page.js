@@ -1,16 +1,16 @@
 import React from "react"
+import MainLayout from "../../layouts/Main"
 
 const SamplePage = ({ pageContext, data }) => {
     return (
-        <>
+        <MainLayout>
             <div
                 style={{
                     fontSize: "10px",
                     backgroundColor: "#345",
                     color: "#eee",
                     padding: "1rem",
-                }}
-            >
+                }}>
                 <pre>
                     <b>Template:</b> {__filename}
                 </pre>
@@ -25,7 +25,7 @@ const SamplePage = ({ pageContext, data }) => {
                     {JSON.stringify(data, null, 2)}
                 </pre>
             </div>
-        </>
+        </MainLayout>
     )
 }
 

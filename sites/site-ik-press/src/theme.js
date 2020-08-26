@@ -1,4 +1,5 @@
 import { red } from "@material-ui/core/colors"
+import { colors } from "@material-ui/core"
 import { createMuiTheme, responsiveFontSizes } from "@material-ui/core/styles"
 import { width } from "@material-ui/system"
 
@@ -25,8 +26,8 @@ const siteTextFontWeight = ""
 const siteTextColor = "#ccca"
 
 const headingsFontFamily = "'Playfair Display', Times, serif" //h1, h2, h3, h4, h5, h6
-const headingsWeight = 700
-const headingsColor = "#ffbf55"
+const headingsWeight = 900
+const headingsColor = "#357"
 
 // ------------- Site Sections ---------------
 
@@ -123,7 +124,7 @@ let theme = createMuiTheme({
         root: {
             color: "tomato",
         },
-        fontSize: 15,
+        fontSize: 14,
         // htmlFontSize: 16,
         h1: {
             fontFamily: headingsFontFamily,
@@ -169,10 +170,10 @@ let theme = createMuiTheme({
         },
 
         fontFamily: [
-            "PT Sans",
             "Roboto",
-            "Arial",
             '"Segoe UI"',
+            "PT Sans",
+            "Arial",
             "sans-serif",
             "-apple-system",
             "BlinkMacSystemFont",
@@ -239,6 +240,33 @@ let theme = createMuiTheme({
         blogRoll: {
             postCardBackground: "rgba(0, 41, 63, 0.7)",
             postCardTextColor: "rgba(255, 255, 255, 0.7)",
+        },
+    },
+    layouts: {
+        Main: {
+            Sidebar: {
+                backgroundColor: "#234",
+                dividerColor: "#FF555585",
+            },
+            SidebarNav: {
+                MenuItem: {
+                    // --- ICONS ---
+                    // iconColor: "#0f0", // font-active color will not match icon's color
+
+                    // --- TEXT ---
+                    fontColor: "#eee",
+                    hoverFontColor: "#FFffff",
+                    hoverFontWeight: 500,
+
+                    activeFontColor: "#FF5555",
+                    hoverActiveFontColor: "#eee",
+                    activeFontWeight: 500,
+
+                    // --- TEXT BACKGROUND ---
+                    hoverBackgroundColor: "#FF555585",
+                    clickRippleBackgroundColor: colors.blueGrey[200],
+                },
+            },
         },
     },
 })

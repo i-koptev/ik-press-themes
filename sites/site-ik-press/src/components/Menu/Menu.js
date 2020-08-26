@@ -2,7 +2,7 @@ import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 
 import MenuItem from "./MenuItem"
-import "./menu.css"
+// import "./menu.css"
 
 const MENU_QUERY = graphql`
     fragment MenuFields on WpMenuItem {
@@ -54,7 +54,11 @@ const renderSubMenu = (menuItem, wordPressUrl, lang) => {
                     wordPressUrl={wordPressUrl}
                     lang={lang}
                 />
-                <ul>{menuItem.children.map(item => renderMenuItem(item))}</ul>
+                <ul>
+                    {menuItem.children.map(item =>
+                        renderMenuItem(item, wordPressUrl, lang)
+                    )}
+                </ul>
             </li>
         </>
     )
@@ -94,11 +98,6 @@ const Menu = ({ lang }) => {
                     const wordPressUrl = data.wp.generalSettings.url
                     return (
                         <>
-                            <pre>
-                                {JSON.stringify(lang, null, 2)}
-                                {/* {JSON.stringify(hierarchicalMenu, null, 2)} */}
-                            </pre>
-                            {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
                             <nav role="navigation">
                                 <ul role="menu">
                                     {hierarchicalMenu.map(menuItem => {

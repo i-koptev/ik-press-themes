@@ -1,20 +1,16 @@
 import React from "react"
-import Layout from "../../components/Layout"
-
-import LangSwitcher from "../../components/LangSwitcher"
+import MainLayout from "../../layouts/Main"
 
 const Page1 = ({ pageContext, data }) => {
     return (
-        <Layout>
-            <LangSwitcher />
+        <MainLayout>
             <div
                 style={{
                     fontSize: "10px",
                     backgroundColor: "#345",
                     color: "#eee",
                     padding: "1rem",
-                }}
-            >
+                }}>
                 <pre>
                     <b>Template:</b> {__filename}
                 </pre>
@@ -29,7 +25,7 @@ const Page1 = ({ pageContext, data }) => {
                     {JSON.stringify(data, null, 2)}
                 </pre>
             </div>
-        </Layout>
+        </MainLayout>
     )
 }
 
