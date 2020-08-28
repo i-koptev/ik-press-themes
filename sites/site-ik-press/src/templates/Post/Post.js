@@ -1,4 +1,6 @@
 import React from "react"
+import { graphql } from "gatsby"
+
 import MainLayout from "../../layouts/Main"
 import PostView from "../../views/PostView"
 

@@ -6,6 +6,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import { makeStyles } from "@material-ui/styles"
 import { Grid } from "@material-ui/core"
+import Container from "@material-ui/core/Container"
 import Typography from "@material-ui/core/Typography"
 
 const useStyles = makeStyles(theme => ({
@@ -124,7 +125,7 @@ const PostView = props => {
             {...rest}
             className={clsx(classes.root, className)}>
             <Grid item xs={12}>
-                <pre>{JSON.stringify(props.data, null, 4)}</pre>
+                {/* <pre>{JSON.stringify(props.data, null, 4)}</pre> */}
                 <Typography
                     className={classes.header}
                     variant="h3"
