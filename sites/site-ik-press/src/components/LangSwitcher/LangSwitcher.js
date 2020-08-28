@@ -35,7 +35,7 @@ const LangSwitcher = () => {
                             ? "/en" + l
                             : l.replace(/ru|lv/i, "en")
                     }
-                    duration={0.7}>
+                    duration={0.3}>
                     EN
                 </AniLink>
             ) : null}
@@ -51,7 +51,7 @@ const LangSwitcher = () => {
                             ? "/ru" + l
                             : l.replace(/en|lv/i, "ru")
                     }
-                    duration={0.7}>
+                    duration={0.3}>
                     RU
                 </AniLink>
             ) : null}
@@ -66,7 +66,7 @@ const LangSwitcher = () => {
                             ? "/lv" + l
                             : l.replace(/en|ru/i, "lv")
                     }
-                    duration={0.7}>
+                    duration={0.3}>
                     LV
                 </AniLink>
             ) : null}
