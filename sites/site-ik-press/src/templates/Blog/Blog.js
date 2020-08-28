@@ -12,3 +12,16 @@ const Blog = props => {
 }
 
 export default Blog
+
+export const blogByChunkPosts = graphql`
+    query logByChunkPosts($chunkPosts: [String] = "") {
+        allWpPost(filter: { id: { in: $chunkPosts } }) {
+            nodes {
+                id
+                title
+                excerpt
+                content
+            }
+        }
+    }
+`
