@@ -53,12 +53,12 @@ module.exports = async ({ actions, graphql }, options) => {
                         context: {
                             lang: `${language}`,
                             id: node.id,
-                            nextPostId: (allPosts[i + 1] || {}).id,
-                            previousPostId: (allPosts[i - 1] || {}).id,
-                            nextPostUri: (allPosts[i + 1] || {}).uri,
-                            previousPostUri: (allPosts[i - 1] || {}).uri,
-                            isLastSingle: !!(allPosts[i - 1] || {}).id,
-                            isFirstSingle: !!(allPosts[i + 1] || {}).id,
+                            nextPostId: (allPosts[i - 1] || {}).id,
+                            previousPostId: (allPosts[i + 1] || {}).id,
+                            nextPostUri: (allPosts[i - 1] || {}).uri,
+                            previousPostUri: (allPosts[i + 1] || {}).uri,
+                            isLastSingle: !(allPosts[i - 1] || {}).id,
+                            isFirstSingle: !(allPosts[i + 1] || {}).id,
                         },
                     })
                     await actions.createPage({
@@ -67,10 +67,10 @@ module.exports = async ({ actions, graphql }, options) => {
                         context: {
                             lang: `${language}`,
                             id: node.id,
-                            nextPostId: (allPosts[i + 1] || {}).id,
-                            previousPostId: (allPosts[i - 1] || {}).id,
-                            isLastSingle: !!(allPosts[i - 1] || {}).id,
-                            isFirstSingle: !!(allPosts[i + 1] || {}).id,
+                            nextPostId: (allPosts[i - 1] || {}).id,
+                            previousPostId: (allPosts[i + 1] || {}).id,
+                            isLastSingle: !(allPosts[i - 1] || {}).id,
+                            isFirstSingle: !(allPosts[i + 1] || {}).id,
                         },
                     })
                 } else {
@@ -80,28 +80,28 @@ module.exports = async ({ actions, graphql }, options) => {
                         context: {
                             lang: `${language}`,
                             id: languageHash[locales[language]][node.id],
-                            nextPostId: allPosts[i + 1]
-                                ? languageHash[locales[language]][
-                                      allPosts[i + 1].id
-                                  ]
-                                : {}.id,
-                            previousPostId: allPosts[i - 1]
+                            nextPostId: allPosts[i - 1]
                                 ? languageHash[locales[language]][
                                       allPosts[i - 1].id
+                                  ]
+                                : {}.id,
+                            previousPostId: allPosts[i + 1]
+                                ? languageHash[locales[language]][
+                                      allPosts[i + 1].id
                                   ]
                                 : {}.id,
 
                             isLastSingle: allPosts[i - 1]
-                                ? !!languageHash[locales[language]][
+                                ? !languageHash[locales[language]][
                                       allPosts[i - 1].id
                                   ]
-                                : !!{}.id,
+                                : !{}.id,
 
                             isFirstSingle: allPosts[i + 1]
-                                ? !!languageHash[locales[language]][
+                                ? !languageHash[locales[language]][
                                       allPosts[i + 1].id
                                   ]
-                                : !!{}.id,
+                                : !{}.id,
                         },
                     })
                 }
