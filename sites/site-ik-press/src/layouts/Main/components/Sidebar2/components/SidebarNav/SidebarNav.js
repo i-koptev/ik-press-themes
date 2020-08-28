@@ -52,13 +52,14 @@ const useStyles = makeStyles(theme => ({
         padding: "10px 8px",
         justifyContent: "flex-start",
         textTransform: "none",
-        letterSpacing: 0.7,
+        letterSpacing: 0.1,
         width: "100%",
-        fontWeight: theme.typography.fontWeightMedium,
+        fontWeight: theme.layouts.Main.SidebarNav.MenuItem.fontWeight,
         textDecoration: "none",
         "&:hover": {
             backgroundColor:
                 theme.layouts.Main.SidebarNav.MenuItem.hoverBackgroundColor,
+            color: theme.layouts.Main.SidebarNav.MenuItem.hoverFontColor,
         },
         "& svg": {
             color: theme.layouts.Main.SidebarNav.MenuItem.iconColor,
@@ -72,7 +73,7 @@ const useStyles = makeStyles(theme => ({
         color: theme.layouts.Main.SidebarNav.MenuItem.activeFontColor,
         fontWeight: theme.layouts.Main.SidebarNav.MenuItem.activeFontWeight,
         "&:hover": {
-            color: theme.layouts.Main.SidebarNav.MenuItem.hoverActiveFontColor,
+            color: theme.layouts.Main.SidebarNav.MenuItem.activeHoverFontColor,
         },
     },
 }))
