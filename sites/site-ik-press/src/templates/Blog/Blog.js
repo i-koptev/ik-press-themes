@@ -2,10 +2,11 @@ import React from "react"
 import MainLayout from "../../layouts/Main"
 import BlogView from "../../views/BlogView"
 
-const Blog = ({ pageContext }) => {
+const Blog = props => {
+    const { pageContext } = props
     return (
         <MainLayout lang={pageContext.lang}>
-            <BlogView pageContext={pageContext} />
+            <BlogView {...props} />
         </MainLayout>
     )
 }
