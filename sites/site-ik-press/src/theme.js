@@ -23,10 +23,12 @@ const sitePaletteAccent = ""
 
 const siteTextFontFamily = ""
 const siteTextFontWeight = ""
-const siteTextColor = "#ccca"
+const siteTextColor = "#333"
 
-const headingsFontFamily = "'Playfair Display', Times, serif" //h1, h2, h3, h4, h5, h6
-const headingsWeight = 900
+const headingsFontFamily =
+    "'Open Sans', Roboto, 'Playfair Display', Times, serif" //h1, h2, h3, h4, h5, h6
+const headingsLetterSpacing = "0.01rem"
+const headingsWeight = 200
 const headingsColor = "#357"
 
 // ------------- Site Sections ---------------
@@ -130,37 +132,37 @@ let theme = createMuiTheme({
             fontFamily: headingsFontFamily,
             fontWeight: headingsWeight,
             color: headingsColor,
-            letterSpacing: "0.2rem",
+            letterSpacing: headingsLetterSpacing,
         },
         h2: {
             fontFamily: headingsFontFamily,
             fontWeight: headingsWeight,
             color: headingsColor,
-            letterSpacing: "0.2rem",
+            letterSpacing: headingsLetterSpacing,
         },
         h3: {
             fontFamily: headingsFontFamily,
             fontWeight: headingsWeight,
             color: headingsColor,
-            letterSpacing: "0.2rem",
+            letterSpacing: headingsLetterSpacing,
         },
         h4: {
             fontFamily: headingsFontFamily,
             fontWeight: headingsWeight,
             color: headingsColor,
-            letterSpacing: "0.2rem",
+            letterSpacing: headingsLetterSpacing,
         },
         h5: {
             fontFamily: headingsFontFamily,
             fontWeight: headingsWeight,
             color: headingsColor,
-            letterSpacing: "0.2rem",
+            letterSpacing: headingsLetterSpacing,
         },
         h6: {
             fontFamily: headingsFontFamily,
             fontWeight: headingsWeight,
             color: headingsColor,
-            letterSpacing: "0.2rem",
+            letterSpacing: headingsLetterSpacing,
         },
         body1: {
             // fontSize: "1rem",
@@ -170,6 +172,7 @@ let theme = createMuiTheme({
         },
 
         fontFamily: [
+            "Open Sans",
             "Roboto",
             '"Segoe UI"',
             "PT Sans",
@@ -217,6 +220,7 @@ let theme = createMuiTheme({
             color: siteTextColor,
             fontWeight: 400,
             textIndent: "2em",
+            textIndent: "3%",
         },
     },
 
@@ -245,8 +249,8 @@ let theme = createMuiTheme({
     layouts: {
         Main: {
             Sidebar: {
-                backgroundColor: "#234",
-                dividerColor: "#FF555585",
+                backgroundColor: "#fff",
+                dividerColor: "rgba(123,123,123, 0.3)",
             },
             SidebarNav: {
                 MenuItem: {
@@ -254,16 +258,17 @@ let theme = createMuiTheme({
                     // iconColor: "#0f0", // font-active color will not match icon's color
 
                     // --- TEXT ---
-                    fontColor: "#eee",
-                    hoverFontColor: "#FFffff",
-                    hoverFontWeight: 500,
+                    fontColor: "#333",
+                    fontWeight: "400 !important",
+                    hoverFontColor: "#f00",
+                    hoverFontWeight: 200,
 
                     activeFontColor: "#FF5555",
-                    hoverActiveFontColor: "#eee",
+                    activeHoverFontColor: "#f00",
                     activeFontWeight: 500,
 
                     // --- TEXT BACKGROUND ---
-                    hoverBackgroundColor: "#FF555585",
+                    hoverBackgroundColor: "rgba(0,0,0,0.01)",
                     clickRippleBackgroundColor: colors.blueGrey[200],
                 },
             },
