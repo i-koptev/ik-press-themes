@@ -24,8 +24,8 @@ const { dd, dump } = require("dumper.js")
 const createBlog = require(`./create/createBlog`)
 const createPosts = require(`./create/createPosts`)
 const createPages = require(`./create/createPages`)
+const createCategories = require(`./create/createCategories`)
 // const createContentTypes = require(`./create/createContentTypes`)
-// const createCategories = require(`./create/createCategories`)
 // const createAuthors = require(`./create/createAuthors`)
 
 const getTemplates = () => {
@@ -43,8 +43,10 @@ const siteLanguages = {
     },
 }
 const languageHash = {}
+const categoryHash = {}
 siteLanguages.languages.forEach(item => {
     languageHash[siteLanguages.locales[item]] = {}
+    categoryHash[siteLanguages.locales[item]] = {}
 })
 
 const allLanguages = siteLanguages.languages
@@ -100,8 +102,17 @@ exports.createPages = async props => {
         defaultLanguageLocale,
         locales,
         languageHash,
-    }) // order matters: use data from CreatePosts & createPages
-    // await createCategories(props, { perPage })
+    }) // order matters: createBlog uses data from CreatePosts & createPages
+
+    await createCategories(props, {
+        perPage,
+        allLanguages,
+        defaultLanguage,
+        defaultLanguageLocale,
+        locales,
+        languageHash,
+        categoryHash,
+    })
     // await createAuthors(props, { perPage })
 
     dump("-*-*-*-*-*- ✨✨✨✨✨✨✨✨✨ -*-*-*-*-*-")
